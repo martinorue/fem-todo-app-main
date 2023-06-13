@@ -1,0 +1,77 @@
+/*-------------------------------- RESET ---------------------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/*agregar #root y .App en el caso de React. Todo lo que contenga a nuestro contenedor principal tiene que tener height: 100% si fuera necesario centrar verticalmente un contenedor*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+#root {
+  /*only with frameworks: adjuste to match the framework*/
+  isolation: isolate;
+}
+
+/*--------------------------------- END RESET ----------------------------------------*/
+
+/*---------------------- To work with rem more easily --------------------------------*/
+
+:root {
+  font-size: 62.5%;
+}
+
+/*------------------------------------------------------------------------------------*/

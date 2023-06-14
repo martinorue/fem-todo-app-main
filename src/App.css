@@ -32,7 +32,7 @@
 
     /* Typography */
 
-    --font-size-body: 18px;
+    --font-size-body: 1.8rem;
     --font-family: 'Josefin Sans', sans-serif;
 
 }
@@ -65,4 +65,34 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid gray;
+    /* Adjusts the position of the checkboxes on the text baseline */
+    vertical-align: -2px;
+    /* Set here so that Windows' High-Contrast Mode can override */
+    /* color: green; */
+    border-radius: 50%;
+}
+
+input[type="checkbox"]::before {
+    content: url(assets/images/icon-check.svg);
+    position: absolute;
+    font-size: 1.2em;
+    right: 2px;
+    top: -0.35em;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before {
+    /* Use `visibility` instead of `display` to avoid recalculating layout */
+    visibility: visible;
 }

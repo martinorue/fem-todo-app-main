@@ -88,6 +88,7 @@ main {
     background-color: var(--very-dark-desaturated-blue);
     border: none;
     caret-color: var(--light-grayish-blue);
+    color: var(--light-grayish-blue);
 }
 
 input::placeholder {

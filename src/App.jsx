@@ -33,6 +33,10 @@ function App () {
       completed
     }
     setTasks([...tasks, task])
+    setNewTask({
+      name: '',
+      completed: false
+    })
   }
 
   const handleChangeNewTask = (event) => {

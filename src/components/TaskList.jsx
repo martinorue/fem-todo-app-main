@@ -1,13 +1,15 @@
 import { Task } from './Task'
 
-export function TaskList ({ tasks, onCompleteTask }) {
+export function TaskList ({ tasks, onCompleteTask, onDeleteTask }) {
   return (
         <form className='task-list-form' onSubmit={(event) => event.preventDefault()}>
             <ul>
                 {tasks.map(task =>
                 <Task key={task.id}
                 task={task}
-                onCompleteTask={() => onCompleteTask(task.id)} />)}
+                onCompleteTask={() => onCompleteTask(task.id)}
+                onDeleteTask={onDeleteTask}
+                />)}
             </ul>
         </form>
   )

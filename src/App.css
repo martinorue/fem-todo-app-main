@@ -12,7 +12,7 @@
     --very-light-gray: hsl(0, 0%, 98%);
     --very-light-grayish-blue: hsl(236, 33%, 92%);
     --light-grayish-blue: hsl(233, 11%, 84%);
-    --dark-grayish-blue: hsl(236, 9%, 61%);
+    --meidum-dark-grayish-blue: hsl(236, 9%, 61%);
     --very-dark-grayish-blue: hsl(235, 19%, 35%);
     --light-theme-bg-mobile-img: url(assets/images/bg-mobile-light.jpg);
 
@@ -38,7 +38,9 @@
 }
 
 .is-light-theme {
-    --dark-theme-bg-mobile-img: var(--light-theme-bg-mobile-img)
+    --dark-theme-bg-mobile-img: var(--light-theme-bg-mobile-img);
+    --very-dark-desaturated-blue: var(--very-light-gray);
+    --light-grayish-blue: var(--very-dark-grayish-blue);
 }
 
 body {
@@ -137,12 +139,12 @@ input[type="checkbox"] {
     position: relative;
     width: 2rem;
     height: 2rem;
-    border: 1px solid gray;
     /* Adjusts the position of the checkboxes on the text baseline */
     vertical-align: -2px;
     /* Set here so that Windows' High-Contrast Mode can override */
-    /* color: green; */
     border-radius: 50%;
+    background-image: linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
 }
 
 input[type="checkbox"]::before {

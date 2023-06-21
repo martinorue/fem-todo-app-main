@@ -39,12 +39,16 @@ function App () {
     setNewTask({ ...newTask, name: event.target.value })
   }
 
+  const handleDeleteTask = (taskId) => {
+    setTasks(tasks.filter(task => task.id !== taskId))
+  }
+
   return (
     <div className={`${!isDark ? 'is-light-theme' : ''} app`}>
       <Header />
       <main>
         <TaskForm newTask={newTask.name} onAddTask={handleAddTask} onChangeNewTask={handleChangeNewTask}/>
-        <TaskList tasks={tasks} onCompleteTask={handleCompleteTask}/>
+        <TaskList tasks={tasks} onCompleteTask={handleCompleteTask} onDeleteTask={handleDeleteTask}/>
       </main>
     </div>
   )

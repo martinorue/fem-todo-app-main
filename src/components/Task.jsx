@@ -1,12 +1,16 @@
 import { useId } from 'react'
-export function Task ({ task }) {
+import iconCross from '../assets/images/icon-cross.svg'
+export function Task ({ task, onCompleteTask }) {
   const taskId = useId()
   return (
-    <li>
+    <li className='task'>
         <label htmlFor={taskId}>
-            <input type='checkbox' id={taskId} />
-            <span>{task.name}</span>
+            <input type='checkbox' id={taskId} onChange={onCompleteTask} checked={task.completed} />
+            <span className={`${task.completed ? 'task--completed' : ''}`}>{task.name}</span>
         </label>
+        <button className='button-delete-task'>
+          <img src={iconCross} />
+        </button>
     </li>
   )
 }

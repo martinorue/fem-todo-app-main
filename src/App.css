@@ -110,6 +110,7 @@ input::placeholder {
     bottom: -3px;
     display: inline-block;
     border-radius: 50%;
+    border: 1px solid var(--very-dark-grayish-blue);
 }
 
 .task-list-form {}
@@ -137,27 +138,31 @@ input[type="checkbox"] {
 
 input[type="checkbox"] {
     position: relative;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     /* Adjusts the position of the checkboxes on the text baseline */
-    vertical-align: -2px;
+    /* vertical-align: -2px; */
     /* Set here so that Windows' High-Contrast Mode can override */
     border-radius: 50%;
-    background-image: linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-
+    border: 1px solid var(--very-dark-grayish-blue);
+    margin-right: 8px;
 }
 
 input[type="checkbox"]::before {
     content: url(assets/images/icon-check.svg);
-    position: absolute;
-    font-size: 1.2em;
-    right: 2px;
-    top: -0.35em;
+    /* Use `visibility` instead of `display` to avoid recalculating layout */
     visibility: hidden;
+    border-radius: 50%;
+    display: flex;
+    transform: scale(0.8);
+    justify-content: center;
+}
+
+input[type="checkbox"]:checked {
+    background-image: linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
 input[type="checkbox"]:checked::before {
-    /* Use `visibility` instead of `display` to avoid recalculating layout */
     visibility: visible;
 }
 

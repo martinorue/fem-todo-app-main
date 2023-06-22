@@ -81,6 +81,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--very-dark-desaturated-blue);
 }
 
 .new-task-input {
@@ -111,9 +112,7 @@ input::placeholder {
     border-radius: 50%;
 }
 
-.task-list-form {
-    background-color: var(--very-dark-desaturated-blue);
-}
+.task-list-form {}
 
 ul {
     padding: 0;
@@ -170,5 +169,22 @@ input[type="checkbox"]:checked::before {
 .button-delete-task {
     background: none;
     border: none;
+    cursor: pointer;
+}
+
+.task-summary-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.task-summary-container,
+.task-summary-container button {
+    color: var(--dark-grayish-blue);
+}
+
+.task-summary-container button {
+    border: none;
+    background: none;
     cursor: pointer;
 }

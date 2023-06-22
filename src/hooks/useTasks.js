@@ -41,5 +41,20 @@ export function useTasks () {
     setTasks(tasks.filter(task => task.id !== taskId))
   }
 
-  return { tasks, newTask, handleAddTask, handleChangeNewTask, handleCompleteTask, handleDeleteTask }
+  const handleClearCompleted = () => {
+    setTasks(tasks.filter(task => !task.completed))
+  }
+
+  const itemsLeft = tasks.filter(task => !task.completed).length
+
+  return {
+    tasks,
+    newTask,
+    handleAddTask,
+    handleChangeNewTask,
+    handleCompleteTask,
+    handleDeleteTask,
+    handleClearCompleted,
+    itemsLeft
+  }
 }

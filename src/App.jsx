@@ -8,6 +8,7 @@ import { useTasks } from './hooks/useTasks'
 import { TaskSummary } from './components/TaskSummary'
 import { TaskFilters } from './components/TaskFilters'
 import { useFilters } from './hooks/useFilters'
+import { Footer } from './components/Footer'
 
 function App () {
   const { isDark } = useContext(ThemeContext)
@@ -33,6 +34,7 @@ function App () {
         <TaskSummary itemsLeft={itemsLeft} onClearCompleted={handleClearCompleted} />
       </main>
         <TaskFilters onChangeFilter={handleChangeFilter} />
+        <Footer />
     </div>
   )
 }

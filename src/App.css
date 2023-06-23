@@ -193,3 +193,7 @@ input[type="checkbox"]:checked::before {
     background: none;
     cursor: pointer;
 }
+
+.footer-info {
+    color: var(--dark-grayish-blue);
+}

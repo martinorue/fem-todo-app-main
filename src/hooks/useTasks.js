@@ -26,11 +26,13 @@ export function useTasks () {
       name,
       completed
     }
-    setTasks([...tasks, task])
-    setNewTask({
-      name: '',
-      completed: false
-    })
+    if (name) {
+      setTasks([...tasks, task])
+      setNewTask({
+        name: '',
+        completed: false
+      })
+    }
   }
 
   const handleChangeNewTask = (event) => {

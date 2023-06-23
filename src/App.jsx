@@ -20,7 +20,8 @@ function App () {
     handleCompleteTask,
     handleDeleteTask,
     handleClearCompleted,
-    itemsLeft
+    itemsLeft,
+    onDragEnd
   } = useTasks()
 
   const { filteredTasks, handleChangeFilter, filter } = useFilters(tasks)
@@ -35,6 +36,7 @@ function App () {
         onDeleteTask={handleDeleteTask}
         itemsLeft={itemsLeft}
         onClearCompleted={handleClearCompleted}
+        onDragEnd={onDragEnd}
         />
         <TaskFilters onChangeFilter={handleChangeFilter} filter={filter} />
 

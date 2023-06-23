@@ -63,10 +63,13 @@ body {
 
 .header {
     display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .header__title {
-    color: var(--light-grayish-blue);
+    color: white;
+    letter-spacing: 1rem;
 }
 
 .header__toggle-theme {
@@ -76,13 +79,13 @@ body {
 }
 
 main {
-    min-width: 340px;
+    min-width: 330px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    max-width: 330px;
+    max-width: 340px;
 }
 
 form {
@@ -103,12 +106,12 @@ form {
     caret-color: var(--light-grayish-blue);
     color: var(--light-grayish-blue);
     width: 100%;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 input::placeholder {
     opacity: 0.5;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .new-task-input:focus-visible {
@@ -127,12 +130,16 @@ input::placeholder {
 }
 
 .task-list-form {
-    border-radius: 6px;
+    border-radius: 5px;
     overflow: hidden;
 }
 
 ul {
     padding: 0;
+}
+
+.task-label {
+    display: flex;
 }
 
 .task {
@@ -166,6 +173,7 @@ input[type="checkbox"] {
     border-radius: 50%;
     border: 1px solid var(--very-dark-grayish-blue);
     margin-right: 8px;
+    flex-shrink: 0;
 }
 
 input[type="checkbox"]::before {
@@ -222,6 +230,7 @@ input[type="checkbox"]:checked::before {
     gap: 20px;
     font-size: 1.85rem;
     padding: 10px 10px;
+    border-radius: 5px;
 }
 
 .radio-checked {

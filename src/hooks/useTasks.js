@@ -19,7 +19,7 @@ export function useTasks () {
 
   const handleAddTask = (event) => {
     event.preventDefault()
-    const id = tasks.length > 0 ? tasks.at(-1).id + 1 : 1
+    const id = crypto.randomUUID()
     const { name, completed } = newTask
     const task = {
       id,
@@ -49,6 +49,15 @@ export function useTasks () {
 
   const itemsLeft = tasks.filter(task => !task.completed).length
 
+  const onDragEnd = (result) => {
+    const { destination, source } = result
+    if (!destination) return
+    const items = [...tasks]
+    const [reorderedItem] = items.splice(source.index, 1)
+    items.splice(destination.index, 0, reorderedItem)
+    setTasks(items)
+  }
+
   return {
     tasks,
     newTask,
@@ -57,6 +66,7 @@ export function useTasks () {
     handleCompleteTask,
     handleDeleteTask,
     handleClearCompleted,
-    itemsLeft
+    itemsLeft,
+    onDragEnd
   }
 }

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import './App.css'
 import { Header } from './components/Header'
 import { TaskForm } from './components/TaskForm'

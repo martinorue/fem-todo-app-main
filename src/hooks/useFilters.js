@@ -12,10 +12,9 @@ export function useFilters (tasks) {
   const filteredTasks = filterTypes[filter]
 
   const handleChangeFilter = (event) => {
-    event.preventDefault()
     const selectedFilter = event.target.value
     setFilter(selectedFilter)
   }
 
-  return { filteredTasks, handleChangeFilter }
+  return { filteredTasks, handleChangeFilter, filter }
 }

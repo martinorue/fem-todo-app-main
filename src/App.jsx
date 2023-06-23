@@ -5,7 +5,7 @@ import { TaskForm } from './components/TaskForm'
 import { ThemeContext } from './context/ThemeContext'
 import { TaskList } from './components/TaskList'
 import { useTasks } from './hooks/useTasks'
-import { TaskSummary } from './components/TaskSummary'
+
 import { TaskFilters } from './components/TaskFilters'
 import { useFilters } from './hooks/useFilters'
 import { Footer } from './components/Footer'
@@ -23,17 +23,22 @@ function App () {
     itemsLeft
   } = useTasks()
 
-  const { filteredTasks, handleChangeFilter } = useFilters(tasks)
+  const { filteredTasks, handleChangeFilter, filter } = useFilters(tasks)
 
   return (
     <div className={`${!isDark ? 'is-light-theme' : ''} app`}>
       <Header />
       <main>
         <TaskForm newTask={newTask.name} onAddTask={handleAddTask} onChangeNewTask={handleChangeNewTask} />
-        <TaskList tasks={filteredTasks} onCompleteTask={handleCompleteTask} onDeleteTask={handleDeleteTask} />
-        <TaskSummary itemsLeft={itemsLeft} onClearCompleted={handleClearCompleted} />
+        <TaskList tasks={filteredTasks}
+        onCompleteTask={handleCompleteTask}
+        onDeleteTask={handleDeleteTask}
+        itemsLeft={itemsLeft}
+        onClearCompleted={handleClearCompleted}
+        />
+        <TaskFilters onChangeFilter={handleChangeFilter} filter={filter} />
+
       </main>
-        <TaskFilters onChangeFilter={handleChangeFilter} />
         <Footer />
     </div>
   )

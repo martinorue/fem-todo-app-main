@@ -76,20 +76,34 @@ body {
 }
 
 main {
-    max-width: 300px;
+    min-width: 340px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    max-width: 330px;
+}
+
+form {
+    width: 100%;
+}
+
+.new-task-input,
+.task-list-form,
+.task-summary-container,
+.filters-container {
     background-color: var(--very-dark-desaturated-blue);
 }
 
+
 .new-task-input {
-    padding: 4px 30px;
-    background-color: var(--very-dark-desaturated-blue);
+    padding: 11px 40px;
     border: none;
     caret-color: var(--light-grayish-blue);
     color: var(--light-grayish-blue);
+    width: 100%;
+    border-radius: 6px;
 }
 
 input::placeholder {
@@ -103,17 +117,19 @@ input::placeholder {
 
 .new-task-icon {
     position: relative;
-    width: 20px;
-    height: 20px;
-    border: 1px solid black;
-    left: 25px;
-    bottom: -3px;
+    width: 2.5rem;
+    height: 2.5rem;
+    left: 7px;
+    bottom: -42px;
     display: inline-block;
     border-radius: 50%;
     border: 1px solid var(--very-dark-grayish-blue);
 }
 
-.task-list-form {}
+.task-list-form {
+    border-radius: 6px;
+    overflow: hidden;
+}
 
 ul {
     padding: 0;
@@ -124,6 +140,9 @@ ul {
     cursor: pointer;
     display: flex;
     color: var(--light-grayish-blue);
+    border-bottom: 1px solid var(--very-dark-grayish-blue);
+    justify-content: space-between;
+    padding: 11px 10px;
 }
 
 label,
@@ -132,7 +151,8 @@ span {
     cursor: inherit;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="radio"] {
     appearance: none;
 }
 
@@ -180,6 +200,7 @@ input[type="checkbox"]:checked::before {
 .task-summary-container {
     display: flex;
     justify-content: space-between;
+    padding: 15px 10px;
     width: 100%;
 }
 
@@ -192,6 +213,28 @@ input[type="checkbox"]:checked::before {
     border: none;
     background: none;
     cursor: pointer;
+}
+
+.filters-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.85rem;
+    padding: 10px 10px;
+}
+
+.radio-checked {
+    color: var(--bright-blue);
+}
+
+.filters-container label {
+    cursor: pointer;
+}
+
+.filters-container button {
+    border: none;
+    background: none;
 }
 
 .footer-info {

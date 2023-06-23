@@ -144,7 +144,6 @@ ul {
 
 .task {
     list-style-type: none;
-    cursor: pointer;
     display: flex;
     color: var(--light-grayish-blue);
     border-bottom: 1px solid var(--very-dark-grayish-blue);
@@ -152,10 +151,8 @@ ul {
     padding: 11px 10px;
 }
 
-label,
-input,
-span {
-    cursor: inherit;
+.task-text {
+    cursor: grab;
 }
 
 input[type="checkbox"],
@@ -174,6 +171,7 @@ input[type="checkbox"] {
     border: 1px solid var(--very-dark-grayish-blue);
     margin-right: 8px;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 input[type="checkbox"]::before {

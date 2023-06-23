@@ -22,9 +22,14 @@ export function TaskList ({ tasks, onCompleteTask, onDeleteTask, itemsLeft, onCl
     return styles
   }
 
-  const getListStyle = isDraggingOver => ({
-    background: isDraggingOver ? 'hsl(235, 21%, 11%)' : 'hsl(235, 21%, 11%'
-  })
+  const getListStyle = isDraggingOver => {
+    const background = isDark ? 'hsl(235, 21%, 11%)' : 'hsl(0, 0%, 98%)'
+    const styles = {
+      background: isDraggingOver ? background : ''
+    }
+
+    return styles
+  }
   return (
   <form className='task-list-form' onSubmit={(event) => event.preventDefault()}>
       <ul>

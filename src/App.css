@@ -35,6 +35,27 @@
     --font-size-body: 1.6rem;
     --font-family: 'Josefin Sans', sans-serif;
 
+    /* Shadow */
+    --shadow-color: 0deg 12% 4%;
+    --shadow-elevation-low:
+        0px 0.9px 1px hsl(var(--shadow-color) / 0.32),
+        0px 1.6px 1.9px -1.1px hsl(var(--shadow-color) / 0.35),
+        0px 3.8px 4.4px -2.2px hsl(var(--shadow-color) / 0.37);
+    --shadow-elevation-medium:
+        0px 0.9px 1px hsl(var(--shadow-color) / 0.34),
+        0px 3.2px 3.7px -0.7px hsl(var(--shadow-color) / 0.36),
+        0px 7.9px 9.2px -1.5px hsl(var(--shadow-color) / 0.38),
+        0.1px 18.9px 22px -2.2px hsl(var(--shadow-color) / 0.39);
+    --shadow-elevation-high:
+        0px 0.9px 1px hsl(var(--shadow-color) / 0.31),
+        0px 6px 7px -0.3px hsl(var(--shadow-color) / 0.32),
+        0px 11.2px 13px -0.6px hsl(var(--shadow-color) / 0.33),
+        0.1px 18.1px 21px -1px hsl(var(--shadow-color) / 0.34),
+        0.1px 28.4px 33px -1.3px hsl(var(--shadow-color) / 0.35),
+        0.2px 43.7px 50.8px -1.6px hsl(var(--shadow-color) / 0.36),
+        0.3px 65.8px 76.5px -1.9px hsl(var(--shadow-color) / 0.37),
+        0.4px 96.3px 111.9px -2.2px hsl(var(--shadow-color) / 0.38);
+
 }
 
 .is-light-theme {
@@ -99,7 +120,6 @@ form {
     background-color: var(--very-dark-desaturated-blue);
 }
 
-
 .new-task-input {
     padding: 11px 40px;
     border: none;
@@ -132,6 +152,7 @@ input::placeholder {
 .task-list-form {
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: var(--shadow-elevation-medium);
 }
 
 ul {
@@ -229,10 +250,7 @@ input[type="checkbox"]:checked::before {
     font-size: 1.85rem;
     padding: 10px 10px;
     border-radius: 5px;
-}
-
-.radio-checked {
-    color: var(--bright-blue);
+    box-shadow: var(--shadow-elevation-medium);
 }
 
 .filters-container label {
@@ -242,6 +260,14 @@ input[type="checkbox"]:checked::before {
 .filters-container button {
     border: none;
     background: none;
+}
+
+.filter-button {
+    color: var(--dark-grayish-blue);
+}
+
+.radio-checked {
+    color: var(--bright-blue);
 }
 
 .footer-info {

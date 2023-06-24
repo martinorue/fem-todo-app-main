@@ -28,5 +28,10 @@ export const initialTasks = [
     id: 6,
     name: 'Complete Todo App on Frontend Mentor',
     completed: false
+  },
+  {
+    id: 7,
+    name: 'Cook dinner',
+    completed: false
   }
 ]

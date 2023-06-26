@@ -207,6 +207,7 @@ ul {
     justify-content: space-between;
     padding: 11px 10px;
     text-align: start;
+    overflow-wrap: anywhere;
 }
 
 .task-text {
@@ -330,4 +331,14 @@ input[type="checkbox"]:checked::before {
 
 .footer-info {
     color: var(--dark-grayish-blue);
+}
+
+.easy-edit-component-wrapper input {
+    background-color: var(--dark-theme-bg-mobile-img);
+    color: var(--light-grayish-blue);
+    width: 240px;
+}
+
+.easy-edit-hover-on {
+    font-style: normal !important;
 }

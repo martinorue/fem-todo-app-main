@@ -1,14 +1,31 @@
 import { useId } from 'react'
 import iconCross from '../assets/images/icon-cross.svg'
+import EasyEdit, { Types } from 'react-easy-edit'
 
 export function Task ({ task, onCompleteTask, onDeleteTask }) {
   const taskId = useId()
+  const save = () => {
+    console.log('save')
+  }
+  const cancel = () => {
+    console.log('cancel')
+  }
   return (
+
     <li className='task'>
         <label className='task-label' htmlFor={taskId}>
             <input type='checkbox' id={taskId} onChange={onCompleteTask} checked={task.completed} />
-            <span className={`${task.completed ? 'task--completed' : ''} task-text`}>{task.name}</span>
         </label>
+            {/* <span className={`${task.completed ? 'task--completed' : ''} task-text`}>{task.name}</span> */}
+              <EasyEdit
+                type={Types.TEXT}
+                saveOnBlur
+                value={task.name}
+                onSave={save}
+                onCancel={cancel}
+                attributes={{ name: 'awesome-input', id: 1 }}
+              >
+            </EasyEdit>
         <button className='button-delete-task' onClick={() => onDeleteTask(task.id)}>
           <img src={iconCross} />
         </button>

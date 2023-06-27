@@ -6,8 +6,8 @@ export function Task ({ task, onCompleteTask, onDeleteTask }) {
   const [showBorder, setShowBorder] = useState(false)
 
   const taskId = useId()
-  const save = () => {
-    console.log('save')
+  const save = (value) => {
+    console.log('Saved value:', value)
   }
   const cancel = () => {
     console.log('cancel')

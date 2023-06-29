@@ -7,6 +7,18 @@ export function useTasks () {
     name: '',
     completed: false
   })
+  const [sortType, setSortType] = useState('aphabetical')
+
+  const alphabeticalOrder = () => {
+    console.log('alphab...')
+    const tasksCopy = [...tasks]
+    const sortedTasks = tasksCopy.sort((a, b) => a.name.localeCompare(b.name))
+    setTasks(sortedTasks)
+  }
+
+  const sortTypes = {
+    aphabetical: alphabeticalOrder
+  }
 
   useEffect(() => {
     saveTasks(tasks)
@@ -58,6 +70,16 @@ export function useTasks () {
     setTasks(items)
   }
 
+  const handleEditTask = (value, taskId) => {
+    const nextTasks = tasks.map(task => task.id === taskId ? { ...task, name: value } : task)
+    setTasks(nextTasks)
+  }
+
+  const onSort = () => {
+    console.log('holis')
+    alphabeticalOrder()
+  }
+
   return {
     tasks,
     newTask,
@@ -67,6 +89,8 @@ export function useTasks () {
     handleDeleteTask,
     handleClearCompleted,
     itemsLeft,
-    onDragEnd
+    onDragEnd,
+    handleEditTask,
+    onSort
   }
 }

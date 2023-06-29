@@ -2,15 +2,13 @@ import { useId, useState } from 'react'
 import iconCross from '../assets/images/icon-cross.svg'
 import EasyEdit, { Types } from 'react-easy-edit'
 
-export function Task ({ task, onCompleteTask, onDeleteTask }) {
+export function Task ({ task, onCompleteTask, onDeleteTask, onEditTask }) {
   const [showBorder, setShowBorder] = useState(false)
 
   const taskId = useId()
   const save = (value) => {
-    console.log('Saved value:', value)
-  }
-  const cancel = () => {
-    console.log('cancel')
+    if (value.trim() === task.name) return
+    onEditTask(value, task.id)
   }
 
   const displayComponent = (
@@ -51,7 +49,6 @@ export function Task ({ task, onCompleteTask, onDeleteTask }) {
                 saveOnBlur
                 value={task.name}
                 onSave={save}
-                onCancel={cancel}
                 attributes={{ name: 'awesome-input', id: 1 }}
                 displayComponent={displayComponent}
               >

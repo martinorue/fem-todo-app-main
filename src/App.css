@@ -111,7 +111,6 @@ body {
 
 main {
     width: 330px;
-    height: 85%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -170,6 +169,7 @@ input::placeholder {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background: var(--very-dark-desaturated-blue);
+    max-height: 300px;
 }
 
 /*---------scrollbar-------------*/
@@ -396,6 +396,11 @@ input[type="checkbox"]:checked::before {
     font-style: normal !important;
 }
 
+.sort-buttons-wrapper {
+    position: absolute;
+    top: 141px;
+}
+
 .button-sort {
     background: none;
     border: none;
@@ -404,8 +409,7 @@ input[type="checkbox"]:checked::before {
 
 .button-sort__icon-alpha,
 .button-sort__icon-down-up {
-    width: 20px;
-    height: 20px;
+    width: 16px;
     filter: invert(92%) sepia(3%) saturate(3819%) hue-rotate(190deg) brightness(91%) contrast(101%);
 }
 

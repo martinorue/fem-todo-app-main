@@ -395,3 +395,20 @@ input[type="checkbox"]:checked::before {
 .easy-edit-hover-on {
     font-style: normal !important;
 }
+
+.button-sort {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.button-sort__icon-alpha,
+.button-sort__icon-down-up {
+    width: 20px;
+    height: 20px;
+    filter: invert(92%) sepia(3%) saturate(3819%) hue-rotate(190deg) brightness(91%) contrast(101%);
+}
+
+.button-sort__icon-alpha {}
+
+.button-sort__icon-down-up {}

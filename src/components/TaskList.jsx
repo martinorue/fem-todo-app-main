@@ -2,8 +2,9 @@ import { useContext } from 'react'
 import { Task } from './Task'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { ThemeContext } from '../context/ThemeContext'
+import { TaskSort } from './TaskSort'
 
-export function TaskList ({ tasks, onCompleteTask, onDeleteTask, itemsLeft, onClearCompleted, onDragEnd, onEditTask, onSort }) {
+export function TaskList ({ tasks, onCompleteTask, onDeleteTask, onDragEnd, onEditTask, onSort }) {
   const { isDark } = useContext(ThemeContext)
   const getItemStyle = (isDragging, draggableStyle) => {
     const background = isDark ? 'hsl(235, 24%, 19%)' : 'hsl(0, 0%, 98%)'
@@ -31,7 +32,7 @@ export function TaskList ({ tasks, onCompleteTask, onDeleteTask, itemsLeft, onCl
   }
   return (
     <>
-      <button onClick={onSort}>sort</button>
+      <TaskSort onSort={onSort} />
         <div className='list-container'>
           <form className='task-list-form' onSubmit={(event) => event.preventDefault()}>
             {tasks.length > 0

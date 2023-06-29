@@ -7,7 +7,6 @@ export function useTasks () {
     name: '',
     completed: false
   })
-  const [sortType, setSortType] = useState('aphabetical')
 
   const alphabeticalOrder = () => {
     console.log('alphab...')
@@ -16,8 +15,16 @@ export function useTasks () {
     setTasks(sortedTasks)
   }
 
+  const reverseOrder = () => {
+    console.log('reverse...')
+    const tasksCopy = [...tasks]
+    const sortedTasks = tasksCopy.reverse()
+    setTasks(sortedTasks)
+  }
+
   const sortTypes = {
-    aphabetical: alphabeticalOrder
+    alphabetical: () => alphabeticalOrder(),
+    reverse: () => reverseOrder()
   }
 
   useEffect(() => {
@@ -75,9 +82,8 @@ export function useTasks () {
     setTasks(nextTasks)
   }
 
-  const onSort = () => {
-    console.log('holis')
-    alphabeticalOrder()
+  const onSort = (event) => {
+    sortTypes[event.currentTarget.value]()
   }
 
   return {

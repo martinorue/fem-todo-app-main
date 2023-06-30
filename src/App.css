@@ -78,8 +78,6 @@ body {
 }
 
 .app {
-    /* max-width: 600px; */
-    height: 100%;
     background-color: var(--very-dark-blue);
     background-image: var(--dark-theme-bg-mobile-img);
     background-repeat: no-repeat;
@@ -92,7 +90,6 @@ body {
 
 .header {
     display: flex;
-    /* width: 100%; */
     justify-content: space-evenly;
     gap: 150px;
     padding-top: 20px;
@@ -184,7 +181,6 @@ input::placeholder {
 }
 
 .list-container::-webkit-scrollbar-thumb {
-    /* background: var(--bright-blue); */
     background: hsla(280, 87%, 65%, 0.842);
     border-radius: 5px;
     border: 2px solid var(--very-dark-desaturated-blue);

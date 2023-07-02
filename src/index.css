@@ -58,7 +58,6 @@ h6 {
 #root {
   /*only with frameworks: adjuste to match the framework*/
   isolation: isolate;
-  height: 100%;
 }
 
 /*--------------------------------- END RESET ----------------------------------------*/

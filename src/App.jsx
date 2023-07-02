@@ -9,7 +9,6 @@ import { TaskSummary } from './components/TaskSummary'
 import { TaskFilters } from './components/TaskFilters'
 import { useFilters } from './hooks/useFilters'
 import { Footer } from './components/Footer'
-import { TaskSort } from './components/TaskSort'
 
 function App () {
   const { isDark } = useContext(ThemeContext)
@@ -31,11 +30,15 @@ function App () {
 
   return (
     <div className={`${!isDark ? 'is-light-theme' : ''} app`}>
-      <Header />
       <div>
-        <TaskSort onSort={onSort} />
+      <Header />
         <main>
-          <TaskForm newTask={newTask.name} onAddTask={handleAddTask} onChangeNewTask={handleChangeNewTask} />
+          <TaskForm
+            newTask={newTask.name}
+            onAddTask={handleAddTask}
+            onChangeNewTask={handleChangeNewTask}
+            onSort={onSort}
+            />
           <TaskList
             tasks={filteredTasks}
             onCompleteTask={handleCompleteTask}
@@ -44,7 +47,6 @@ function App () {
             onClearCompleted={handleClearCompleted}
             onDragEnd={onDragEnd}
             onEditTask={handleEditTask}
-            onSort={onSort}
           />
           <TaskSummary itemsLeft={itemsLeft} onClearCompleted={handleClearCompleted} />
           {/* <TaskSummary itemsLeft={itemsLeft} onClearCompleted={handleClearCompleted} /> */}

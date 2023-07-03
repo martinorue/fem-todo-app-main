@@ -56,8 +56,6 @@
         0.1px 7.4px 7.5px -2.2px hsl(var(--shadow-color-light-theme) / 0.3),
         0.2px 12.7px 12.9px -2.7px hsl(var(--shadow-color-light-theme) / 0.28),
         0.3px 20.4px 20.7px -3.2px hsl(var(--shadow-color-light-theme) / 0.25);
-
-
 }
 
 .is-light-theme {
@@ -267,7 +265,6 @@ input[type="checkbox"]:checked:hover {
 }
 
 input[type="checkbox"]:hover::before {
-    /* border: linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)); */
     transform: scale(1.1);
     transition: transform 0.2s ease-in-out;
 }
@@ -319,6 +316,8 @@ input[type="checkbox"]:checked::before {
     cursor: pointer;
     margin-left: auto;
 }
+
+.button-delete-task:hover {}
 
 .button-delete-task img {
     min-width: 18px;
@@ -375,6 +374,12 @@ input[type="checkbox"]:checked::before {
 .filter-button {
     color: var(--dark-grayish-blue);
     font-weight: 700;
+}
+
+.filter-button:hover,
+.task-summary-container button:hover {
+    color: var(--dark-mode-light-grayish-blue-hover);
+    transition: 0.3s ease-in-out;
 }
 
 .radio-checked {
@@ -449,8 +454,19 @@ input[type="checkbox"]:checked::before {
     width: 100%;
 }
 
+.menu-item:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.menu-item:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
 .menu-item:hover {
     background-color: var(--dark-mode-light-grayish-blue-hover);
+    color: var(--bright-blue);
 }
 
 /*-------------------- end menu -------------------------------*/

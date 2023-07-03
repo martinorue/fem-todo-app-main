@@ -27,23 +27,21 @@ export function Task ({ task, onCompleteTask, onDeleteTask, onEditTask }) {
 
   return (
 
-    <li className='task'>
-        <label className='task-label' htmlFor={taskId}>
-          {/* <div className="checkbox-border-wrap"> */}
+    <li className='task'
+    onMouseEnter={hoverEnter}
+    onMouseLeave={hoverLeave}>
+        <label className='task-label' htmlFor={taskId} >
             <input
                 type='checkbox'
                 id={taskId}
                 onChange={onCompleteTask}
                 checked={task.completed}
-                onMouseEnter={hoverEnter}
-                onMouseLeave={hoverLeave}
+
               />
               <div className={`${showBorder ? 'gradient-border-wrapper' : ''}`}>
                 <div className={`${showBorder ? 'gradient-border' : ''}`}></div>
               </div>
-          {/* </div> */}
         </label>
-            {/* <span className={`${task.completed ? 'task--completed' : ''} task-text`}>{task.name}</span> */}
               <EasyEdit
                 type={Types.TEXTAREA}
                 saveOnBlur

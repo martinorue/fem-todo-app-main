@@ -1,9 +1,10 @@
-import { useId, useState } from 'react'
+import { useId, useState, useRef } from 'react'
 import iconCross from '../assets/images/icon-cross.svg'
 import EasyEdit, { Types } from 'react-easy-edit'
 
 export function Task ({ task, onCompleteTask, onDeleteTask, onEditTask }) {
   const [showBorder, setShowBorder] = useState(false)
+  const taskRef = useRef(null)
 
   const taskId = useId()
   const save = (value) => {
@@ -25,9 +26,15 @@ export function Task ({ task, onCompleteTask, onDeleteTask, onEditTask }) {
     setShowBorder(false)
   }
 
+  const deleteTask = () => {
+    taskRef.current.classList.add('task-deleted')
+    setTimeout(() => onDeleteTask(task.id), 350)
+  }
+
   return (
 
     <li className='task'
+    ref={taskRef}
     onMouseEnter={hoverEnter}
     onMouseLeave={hoverLeave}>
         <label className='task-label' htmlFor={taskId} >
@@ -51,7 +58,7 @@ export function Task ({ task, onCompleteTask, onDeleteTask, onEditTask }) {
                 displayComponent={displayComponent}
               >
             </EasyEdit>
-        <button className='button-delete-task' onClick={() => onDeleteTask(task.id)}>
+        <button className='button-delete-task' onClick={() => deleteTask(task.id)}>
           <img src={iconCross} />
         </button>
     </li>

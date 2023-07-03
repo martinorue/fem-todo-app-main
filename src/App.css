@@ -161,6 +161,7 @@ input::placeholder {
 .task-list-form {
     border-top-left-radius: 5px;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .list-container {
@@ -326,6 +327,27 @@ input[type="checkbox"]:checked::before {
 .button-delete-task img {
     min-width: 18px;
 }
+
+/*---------------------------delete task animation--------------------------------------*/
+
+.task-deleted {
+    animation: fadeOutMoveRight 0.3s forwards;
+    border: none;
+}
+
+@keyframes fadeOutMoveRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+/*--------------------------------------------------------------------------------------*/
 
 .no-items-message {
     color: var(--dark-grayish-blue);

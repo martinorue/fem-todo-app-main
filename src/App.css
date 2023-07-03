@@ -67,6 +67,7 @@
     --midnight-blue: var(--very-light-grayish-blue);
     --dark-grayish-blue: var(--medium-dark-grayish-blue);
     --shadow-dark-theme: var(--shadow-light-theme);
+    --dark-mode-light-grayish-blue-hover: var(--light-grayish-blue)
 }
 
 body {

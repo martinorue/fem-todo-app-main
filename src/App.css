@@ -317,7 +317,10 @@ input[type="checkbox"]:checked::before {
     margin-left: auto;
 }
 
-.button-delete-task:hover {}
+.button-delete-task:hover {
+    opacity: 0.5;
+    transition: 0.2s ease-in-out;
+}
 
 .button-delete-task img {
     min-width: 18px;

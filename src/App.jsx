@@ -48,9 +48,10 @@ function App () {
             onDragEnd={onDragEnd}
             onEditTask={handleEditTask}
           />
-          <TaskSummary itemsLeft={itemsLeft} onClearCompleted={handleClearCompleted} />
-          {/* <TaskSummary itemsLeft={itemsLeft} onClearCompleted={handleClearCompleted} /> */}
-          <TaskFilters onChangeFilter={handleChangeFilter} filter={filter} />
+          <div className='summary-filters-wrapper'>
+            <TaskSummary itemsLeft={itemsLeft} onClearCompleted={handleClearCompleted} />
+            <TaskFilters onChangeFilter={handleChangeFilter} filter={filter} />
+          </div>
           <Footer />
         </main>
       </div>

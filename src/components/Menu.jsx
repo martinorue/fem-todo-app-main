@@ -26,7 +26,6 @@ export function Menu ({ onSort }) {
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
-
   return (
     <div className="kebab-menu" ref={menuRef}>
       <button className="menu-toggle" onClick={toggleMenu}>

@@ -16,6 +16,7 @@
     --dark-mode-light-grayish-blue-hover: hsl(236, 33%, 92%);
     /*dark theme img*/
     --dark-theme-bg-mobile-img: url(assets/images/bg-mobile-dark.jpg);
+    --dark-theme-bg-desktop-img: url(assets/images/bg-desktop-dark.jpg);
 
     --dark-grayish-blue: hsl(234, 11%, 52%);
     --midnight-blue: hsl(233, 14%, 35%);
@@ -31,6 +32,7 @@
 
     /*light theme img*/
     --light-theme-bg-mobile-img: url(assets/images/bg-mobile-light.jpg);
+    --light-theme-bg-desktop-img: url(assets/images/bg-desktop-light.jpg);
 
 
     /* Typography */
@@ -60,6 +62,7 @@
 
 .is-light-theme {
     --dark-theme-bg-mobile-img: var(--light-theme-bg-mobile-img);
+    --dark-theme-bg-desktop-img: var(--light-theme-bg-desktop-img);
     --very-dark-desaturated-blue: var(--very-light-gray);
     --very-dark-blue: var(--very-light-grayish-blue);
     --dark-grayish-blue: var(--light-grayish-blue);
@@ -106,7 +109,7 @@ body {
 }
 
 main {
-    width: 330px;
+    max-width: 330px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -354,6 +357,13 @@ input[type="checkbox"]:checked::before {
     padding: 15px 0;
 }
 
+.summary-filters-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .task-summary-container {
     display: flex;
     justify-content: space-between;
@@ -444,7 +454,7 @@ input[type="checkbox"]:checked::before {
     filter: invert(92%) sepia(3%) saturate(3819%) hue-rotate(190deg) brightness(91%) contrast(101%);
 }
 
-/*------------------------- menu ------------------------------*/
+/*------------------------- kebab menu ------------------------------*/
 .kebab-menu {
     position: absolute;
     right: 10px;
@@ -496,3 +506,15 @@ input[type="checkbox"]:checked::before {
 }
 
 /*-------------------- end menu -------------------------------*/
+
+/*------------------- Desktop View ---------------------------*/
+@media (width>=37.5em) {
+    .app {
+        background-image: var(--dark-theme-bg-desktop-img);
+    }
+
+    main {
+        min-width: 550px;
+        max-width: 600px;
+    }
+}

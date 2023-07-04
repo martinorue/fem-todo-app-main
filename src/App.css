@@ -174,7 +174,7 @@ input::placeholder {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background: var(--very-dark-desaturated-blue);
-    max-height: 360px;
+    max-height: 245px;
 }
 
 /*---------scrollbar-------------*/
@@ -549,7 +549,7 @@ input[type="checkbox"]:checked::before {
     }
 
     .list-container {
-        max-height: 347px;
+        max-height: 290px;
     }
 
 }

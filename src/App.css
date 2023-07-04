@@ -99,7 +99,8 @@ body {
 
 .header__title {
     color: white;
-    letter-spacing: 1rem;
+    letter-spacing: 1.3rem;
+    font-size: 3.5rem;
 }
 
 .header__toggle-theme {
@@ -114,7 +115,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     margin-top: 30px;
 }
 
@@ -134,10 +135,10 @@ form {
 }
 
 .new-task-input {
-    padding: 13px 50px;
+    padding: 16px 50px;
     border: none;
     caret-color: var(--light-grayish-blue);
-    color: var(--light-grayish-blue);
+    color: var(--dark-mode-light-grayish-blue);
     width: 100%;
     border-radius: 5px;
 }
@@ -156,7 +157,7 @@ input::placeholder {
     width: 25px;
     height: 25px;
     left: 12px;
-    bottom: 12px;
+    bottom: 16px;
     border-radius: 50%;
     border: 1px solid var(--midnight-blue);
 }
@@ -164,16 +165,16 @@ input::placeholder {
 .task-list-form {
     border-top-left-radius: 5px;
     text-align: center;
-    overflow-x: hidden;
 }
 
 .list-container {
     overflow-y: auto;
+    overflow-x: hidden;
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background: var(--very-dark-desaturated-blue);
-    max-height: 300px;
+    max-height: 360px;
 }
 
 /*---------scrollbar-------------*/
@@ -336,6 +337,7 @@ input[type="checkbox"]:checked::before {
 .task-deleted {
     animation: fadeOutMoveRight 0.3s forwards;
     border: none;
+    pointer-events: none !important;
 }
 
 @keyframes fadeOutMoveRight {
@@ -426,16 +428,25 @@ input[type="checkbox"]:checked::before {
     color: var(--dark-grayish-blue);
 }
 
+/*--------------------- easy-edit ---------------------------*/
+
+.easy-edit-component-wrapper,
+.easy-edit-inline-wrapper {
+    width: 100%;
+}
+
 .easy-edit-component-wrapper textarea {
     background-color: var(--dark-theme-bg-mobile-img);
     color: var(--light-grayish-blue);
-    width: 240px;
+    width: 100%;
     resize: none;
 }
 
 .easy-edit-hover-on {
     font-style: normal !important;
 }
+
+/*-------------------------------------------------------------*/
 
 .sort-buttons-wrapper {
     position: absolute;
@@ -458,7 +469,7 @@ input[type="checkbox"]:checked::before {
 .kebab-menu {
     position: absolute;
     right: 10px;
-    bottom: 9px;
+    bottom: 11px;
 }
 
 .menu-toggle {
@@ -514,7 +525,40 @@ input[type="checkbox"]:checked::before {
     }
 
     main {
-        min-width: 550px;
+        min-width: 540px;
         max-width: 600px;
     }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 72px;
+    }
+
+    .filters-container {
+        position: absolute;
+        width: fit-content;
+        right: 33%;
+        top: -15px;
+        background: none;
+        box-shadow: none;
+    }
+
+    .summary-filters-wrapper {
+        position: relative;
+    }
+
+    .list-container {
+        max-height: 347px;
+    }
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    -webkit-text-fill-color: var(--light-grayish-blue);
+    -webkit-box-shadow: var(--shadow-color-dark-theme);
+    transition: background-color 5000s ease-in-out 0s;
 }

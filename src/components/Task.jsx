@@ -32,18 +32,17 @@ export function Task ({ task, onCompleteTask, onDeleteTask, onEditTask }) {
   }
 
   return (
-
     <li className='task'
-    ref={taskRef}
-    onMouseEnter={hoverEnter}
-    onMouseLeave={hoverLeave}>
+        ref={taskRef}
+        onMouseEnter={hoverEnter}
+        onMouseLeave={hoverLeave}
+        >
         <label className='task-label' htmlFor={taskId} >
             <input
                 type='checkbox'
                 id={taskId}
                 onChange={onCompleteTask}
                 checked={task.completed}
-
               />
               <div className={`${showBorder ? 'gradient-border-wrapper' : ''}`}>
                 <div className={`${showBorder ? 'gradient-border' : ''}`}></div>
@@ -54,7 +53,7 @@ export function Task ({ task, onCompleteTask, onDeleteTask, onEditTask }) {
                 saveOnBlur
                 value={task.name}
                 onSave={save}
-                attributes={{ name: 'awesome-input', id: 1 }}
+                attributes={{ name: 'awesome-input', id: `${taskId}-${task.name}` }}
                 displayComponent={displayComponent}
               >
             </EasyEdit>

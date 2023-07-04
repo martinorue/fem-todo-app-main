@@ -9,14 +9,12 @@ export function useTasks () {
   })
 
   const alphabeticalOrder = () => {
-    console.log('alphab...')
     const tasksCopy = [...tasks]
     const sortedTasks = tasksCopy.sort((a, b) => a.name.localeCompare(b.name))
     setTasks(sortedTasks)
   }
 
   const reverseOrder = () => {
-    console.log('reverse...')
     const tasksCopy = [...tasks]
     const sortedTasks = tasksCopy.reverse()
     setTasks(sortedTasks)
@@ -66,7 +64,7 @@ export function useTasks () {
     setTasks(tasks.filter(task => !task.completed))
   }
 
-  const itemsLeft = tasks.filter(task => !task.completed).length
+  const itemsLeft = tasks?.filter(task => !task.completed).length
 
   const onDragEnd = (result) => {
     const { destination, source } = result

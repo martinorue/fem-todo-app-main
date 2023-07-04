@@ -5,8 +5,8 @@ export function useFilters (tasks) {
 
   const filterTypes = {
     all: tasks,
-    active: tasks.filter(task => !task.completed),
-    completed: tasks.filter(task => task.completed)
+    active: tasks.filter(task => !task?.completed),
+    completed: tasks.filter(task => task?.completed)
   }
 
   const filteredTasks = filterTypes[filter]

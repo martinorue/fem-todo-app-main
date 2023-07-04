@@ -31,7 +31,6 @@ export function TaskList ({ tasks, onCompleteTask, onDeleteTask, onDragEnd, onEd
   }
   return (
     <>
-
         <div className='list-container'>
           <form className='task-list-form' onSubmit={(event) => event.preventDefault()}>
             {tasks.length > 0

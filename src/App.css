@@ -552,6 +552,10 @@ input[type="checkbox"]:checked::before {
         max-height: 290px;
     }
 
+    .footer-info {
+        padding-top: 20px;
+    }
+
 }
 
 input:-webkit-autofill,

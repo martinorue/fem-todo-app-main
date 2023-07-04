@@ -38,7 +38,7 @@ export function TaskList ({ tasks, onCompleteTask, onDeleteTask, onDragEnd, onEd
               ? <DragDropContext onDragEnd={onDragEnd}>
                   <Droppable droppableId='tasks'>
                     {(provided, snapshot) => (
-                      <section {...provided.droppableProps} ref={provided.innerRef}
+                      <ul {...provided.droppableProps} ref={provided.innerRef}
                       style={getListStyle(snapshot.isDraggingOver)}>
                         {tasks?.map((task, index) =>
                         <Draggable key={task.id} draggableId={task.id.toString()} index={index}>
@@ -57,18 +57,20 @@ export function TaskList ({ tasks, onCompleteTask, onDeleteTask, onDragEnd, onEd
                                 role='button'
                                 >
                               </div>
-                              <Task
-                                task={task}
-                                onCompleteTask={() => onCompleteTask(task.id)}
-                                onDeleteTask={onDeleteTask}
-                                onEditTask={onEditTask}
-                                />
+                              <div>
+                                <Task
+                                  task={task}
+                                  onCompleteTask={() => onCompleteTask(task.id)}
+                                  onDeleteTask={onDeleteTask}
+                                  onEditTask={onEditTask}
+                                  />
+                              </div>
                             </li>
                           )}
                         </Draggable>
                         )}
                         {provided.placeholder}
-                      </section>
+                      </ul>
                     )}
                   </Droppable>
                 </DragDropContext>

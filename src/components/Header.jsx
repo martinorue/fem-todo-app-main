@@ -8,7 +8,7 @@ export function Header () {
   return (
     <header className='header'>
         <h1 className='header__title'>TODO</h1>
-        <button type='checkbox' onClick={handleChangeTheme} className='header__toggle-theme'>
+        <button onClick={handleChangeTheme} className='header__toggle-theme'>
             <img src={`${isDark ? iconSun : iconMoon}`} alt='' />
         </button>
     </header>

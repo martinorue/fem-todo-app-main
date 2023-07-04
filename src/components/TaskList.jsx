@@ -9,6 +9,7 @@ export function TaskList ({ tasks, onCompleteTask, onDeleteTask, onDragEnd, onEd
     const background = isDark ? 'hsl(235, 24%, 19%)' : 'hsl(0, 0%, 98%)'
     const draggingBg = isDark ? 'hsl(235, 19%, 35%)' : 'hsl(236, 33%, 92%)'
     const styles = {
+      listStyleType: 'none',
       // some basic styles to make the items look a bit nicer
       userSelect: 'none',
 
@@ -34,8 +35,7 @@ export function TaskList ({ tasks, onCompleteTask, onDeleteTask, onDragEnd, onEd
         <div className='list-container'>
           <form className='task-list-form' onSubmit={(event) => event.preventDefault()}>
             {tasks.length > 0
-              ? <ul>
-                <DragDropContext onDragEnd={onDragEnd}>
+              ? <DragDropContext onDragEnd={onDragEnd}>
                   <Droppable droppableId='tasks'>
                     {(provided, snapshot) => (
                       <section {...provided.droppableProps} ref={provided.innerRef}
@@ -43,21 +43,27 @@ export function TaskList ({ tasks, onCompleteTask, onDeleteTask, onDragEnd, onEd
                         {tasks?.map((task, index) =>
                         <Draggable key={task.id} draggableId={task.id.toString()} index={index}>
                           {(provided, snapshot) => (
-                            <article
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                            ref={provided.innerRef}
-                            style={getItemStyle(
-                              snapshot.isDragging,
-                              provided.draggableProps.style
-                            )}>
+                            <li
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                              ref={provided.innerRef}
+                              style={getItemStyle(
+                                snapshot.isDragging,
+                                provided.draggableProps.style
+                              )}>
+                              <div
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                role='button'
+                                >
+                              </div>
                               <Task
                                 task={task}
                                 onCompleteTask={() => onCompleteTask(task.id)}
                                 onDeleteTask={onDeleteTask}
                                 onEditTask={onEditTask}
                                 />
-                            </article>
+                            </li>
                           )}
                         </Draggable>
                         )}
@@ -66,7 +72,6 @@ export function TaskList ({ tasks, onCompleteTask, onDeleteTask, onDragEnd, onEd
                     )}
                   </Droppable>
                 </DragDropContext>
-              </ul>
               : <p className='no-items-message'>No items on the list</p>
             }
           </form>

@@ -58,7 +58,7 @@ export function Task ({ task, onCompleteTask, onDeleteTask, onEditTask }) {
               >
             </EasyEdit>
         <button className='button-delete-task' onClick={() => deleteTask(task.id)}>
-          <img src={iconCross} />
+          <img src={iconCross} alt='delete task'/>
         </button>
     </li>
   )

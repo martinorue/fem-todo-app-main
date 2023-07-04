@@ -28,7 +28,7 @@ export function Menu ({ onSort }) {
   }
   return (
     <div className="kebab-menu" ref={menuRef}>
-      <button className="menu-toggle" onClick={toggleMenu}>
+      <button type='button' className="menu-toggle" onClick={toggleMenu}>
         <BsThreeDotsVertical size={16} color={`${isDark ? 'hsl(236, 33%, 92%)' : 'hsl(235, 19%, 35%)'}`} />
       </button>
       {isOpen && (

@@ -436,8 +436,8 @@ input[type="checkbox"]:checked::before {
 }
 
 .easy-edit-component-wrapper textarea {
-    background-color: var(--dark-theme-bg-mobile-img);
-    color: var(--light-grayish-blue);
+    background-color: var(--very-dark-desaturated-blue);
+    color: var(--dark-mode-light-grayish-blue);
     width: 100%;
     resize: none;
 }
